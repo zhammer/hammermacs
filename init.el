@@ -33,26 +33,10 @@
 (show-paren-mode 1)
 (electric-pair-mode 1)
 
-;; (defun insert-hard-brackets (&optional arg) ;; copied from insert-parentheses.
-;;   ;; M-{ is already mapped. maybe i should just hook into insert (,[,{ commands.
-;;   ;; if there is a region active, insert-pair of the bracket type
-;;   "Enclose following ARG sexps in parentheses.
-;; Leave point after open-paren.
-;; A negative ARG encloses the preceding ARG sexps instead.
-;; No argument is equivalent to zero: just insert `()' and leave point between.
-;; If `parens-require-spaces' is non-nil, this command also inserts a space
-;; before and after, depending on the surrounding characters.
-;; If region is active, insert enclosing characters at region boundaries.
-
-;; This command assumes point is not in a string or comment."
-;;   (interactive "P")
-;;   (insert-pair arg ?\[ ?\]))
-;; (global-set-key (kbd "M-[") 'insert-hard-brackets)
-
-;; ;; ~~ ido mode ~~
-;; (ido-mode 1)
-;; (setq ido-everywhere t)
-;; (setq ido-enable-flex-matching t)
+;; ~~ ido mode ~~
+(ido-mode 1)
+(setq ido-everywhere t)
+(setq ido-enable-flex-matching t)
 
 ;; ~~ theme ~~
 (custom-set-variables
