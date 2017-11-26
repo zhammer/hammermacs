@@ -8,3 +8,4 @@
   * would be cool to have a jenkins build on PR's to check that emacs init.el doesn't break.
   * Markdown live preview doesn't support lists. Fix?
   * [Dired Omit Mode](https://www.emacswiki.org/emacs/DiredOmitMode) (with sqk file?)
+  * Try out [Magit](https://github.com/magit/magit)
