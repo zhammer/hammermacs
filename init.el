@@ -1,4 +1,4 @@
-;; ~~ no menu, tool buttons, scroll, custom splash ~~
+
 
 ;; Added by Package.el.  This must come before configurations of
 ;; installed packages.  Don't delete this line.  If you don't want it,
@@ -6,6 +6,7 @@
 ;; You may delete these explanatory comments.
 (package-initialize)
 
+;; ~~ no menu, tool buttons, scroll, custom splash ~~
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
