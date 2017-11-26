@@ -14,6 +14,9 @@
 (global-linum-mode t)
 (setq initial-scratch-message ";; it's hammertime")
 
+;; ~~ edit preferences ~~
+(delete-selection-mode 1)
+
 ;; ~~ theme ~~
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -31,6 +34,7 @@
  )
 
 ;; ~~ add elpa and melpa package archives ~~
+;; TODO: clean this code up
 (setq package-archives  '(("gnu" . "http://elpa.gnu.org/packages/")   ("melpa" . "http://melpa.org/packages/")))
 (require 'package)
 (add-to-list 'package-archives
@@ -44,6 +48,4 @@
   "For use in `python-mode-hook'."
   (local-set-key (kbd "C-c C-d") 'pdb)
   )
-
-;; add to hook
 (add-hook 'python-mode-hook 'my-python-mode-config)
