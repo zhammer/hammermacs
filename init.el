@@ -39,3 +39,10 @@
 ;; ~~ python ~~
 (setq gud-pdb-command-name "python -m pdb")
 (setq python-shell-completion-native-enable nil)
+(defun my-python-mode-config ()
+  "For use in `python-mode-hook'."
+  (local-set-key (kbd "C-c C-d") 'pdb)
+  )
+
+;; add to hook
+(add-hook 'python-mode-hook 'my-python-mode-config)
