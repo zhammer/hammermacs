@@ -1,9 +1,11 @@
 
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
+;; ~~ add elpa and melpa package archives ~~
+(require 'package)
+(add-to-list 'package-archives
+	     '("gnu" . "http://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 (package-initialize)
 
 ;; ~~ no menu, tool buttons, scroll, custom splash ~~
@@ -16,6 +18,7 @@
 
 ;; ~~ edit preferences ~~
 (delete-selection-mode 1)
+(show-paren-mode 1)
 
 ;; ~~ theme ~~
 (custom-set-variables
@@ -23,23 +26,15 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(x-focus-frame nil) ;; how do i get this to work w/ emacs daemon?
  '(custom-enabled-themes (quote (misterioso)))
- '(package-selected-packages (quote (markdown-mode))))
+ '(package-selected-packages (quote (helm-ebdb helm markdown-mode)))
+ '(x-focus-frame nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-;; ~~ add elpa and melpa package archives ~~
-;; TODO: clean this code up
-(setq package-archives  '(("gnu" . "http://elpa.gnu.org/packages/")   ("melpa" . "http://melpa.org/packages/")))
-(require 'package)
-(add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/"))
-(package-initialize)
 
 ;; ~~ python ~~
 (setq gud-pdb-command-name "python -m pdb")
