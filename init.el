@@ -29,7 +29,7 @@
 
 ;; ~~ edit preferences ~~
 (delete-selection-mode 1)
-(setq show-paren-delay 0) ;; must come before show-paren-mode enable
+(setq show-paren-delay 0) ; must come before show-paren-mode enable
 (show-paren-mode 1)
 (electric-pair-mode 1)
 
@@ -37,6 +37,14 @@
 (ido-mode 1)
 (setq ido-everywhere t)
 (setq ido-enable-flex-matching t)
+
+;; ~~ eshell ~~
+; add colors
+(add-hook
+ 'eshell-mode-hook
+ (lambda ()
+   (setenv "TERM" "emacs")
+  ))
 
 ;; ~~ theme ~~
 (custom-set-variables
