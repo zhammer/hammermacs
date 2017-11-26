@@ -1,3 +1,4 @@
 # TODO
   * Convert todo to org mode.
-  * I forget the other..
+  * Add ('C-c C-d' - M-x pdb) command to python major mode
+  * Fix (x-focus-frame nil) mac emacs --daemon gui init error
