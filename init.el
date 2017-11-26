@@ -2,7 +2,9 @@
 
 ;; ~~ setup packages ~~
 (require 'package)
+; list of packages to install
 (setq package-list '(markdown-mode helm wrap-region))
+; set package archives
 ;; Question: how do i combine these into one line?
 (add-to-list 'package-archives
 	     '("gnu" . "https://elpa.gnu.org/packages/"))
@@ -12,7 +14,6 @@
 ; fetch the list of packages available 
 (unless package-archive-contents
   (package-refresh-contents))
-
 ; install the missing packages
 (dolist (package package-list)
   (unless (package-installed-p package)
