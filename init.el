@@ -21,3 +21,6 @@
 
 ;; ~~ add elpa and melpa package archives ~~
 (setq package-archives  '(("gnu" . "http://elpa.gnu.org/packages/")   ("melpa" . "http://melpa.org/packages/")))
+
+;; ~~ pdb command ~~
+(setq gud-pdb-command-name "python -m pdb")
