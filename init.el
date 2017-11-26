@@ -1,4 +1,11 @@
-;; no menu, tool buttons, scroll, custom splash
+;; ~~ no menu, tool buttons, scroll, custom splash ~~
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
@@ -7,19 +14,10 @@
 (setq initial-scratch-message ";; it's hammertime")
 ;; (x-focus-frame nil) this is causing an error in emacs --daemon
 
-;; theme
+;; ~~ theme ~~
 (custom-set-variables
  '(custom-enabled-themes (quote (misterioso))))
 (custom-set-faces)
 
-(defconst exordium-before-init "before-init.el"
-  "name of the before init file")
-
-(defconst exordium-prefs "prefs.el"
-  "name of the prefs file")
-
-(defconst exordium-after-init "after-init.el"
-  "name of the after init file")
-
-;; Save any custom set variable in after-init.el rather than at the end of init.el:
-(setq custom-file "~/.emacs.d/after-init.el")
+;; ~~ add elpa and melpa package archives ~~
+(setq package-archives  '(("gnu" . "http://elpa.gnu.org/packages/")   ("melpa" . "http://melpa.org/packages/")))
