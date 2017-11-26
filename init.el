@@ -6,6 +6,7 @@
 	     '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+;; add package list: markdown-mode, helm
 (package-initialize)
 
 ;; ~~ no menu, tool buttons, scroll, custom splash ~~
@@ -18,6 +19,7 @@
 
 ;; ~~ edit preferences ~~
 (delete-selection-mode 1)
+(setq show-paren-delay 0) ;; must come before show-paren-mode enable
 (show-paren-mode 1)
 
 ;; ~~ theme ~~
