@@ -9,3 +9,4 @@
   * Markdown live preview doesn't support lists. Fix?
   * [Dired Omit Mode](https://www.emacswiki.org/emacs/DiredOmitMode) (with sqk file?)
   * Try out [Magit](https://github.com/magit/magit)
+  * Delay to turn on ido? I like the cleaner display at first
