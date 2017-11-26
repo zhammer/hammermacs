@@ -1,0 +1,2 @@
+# hammermacs
+emacs for me
