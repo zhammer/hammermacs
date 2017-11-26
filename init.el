@@ -12,7 +12,6 @@
 (setq inhibit-startup-screen t)
 (global-linum-mode t)
 (setq initial-scratch-message ";; it's hammertime")
-;; (x-focus-frame nil) this is causing an error in emacs --daemon
 
 ;; ~~ theme ~~
 (custom-set-variables
@@ -20,6 +19,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(x-focus-frame nil) ;; how do i get this to work w/ emacs daemon?
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages (quote (markdown-mode))))
 (custom-set-faces
