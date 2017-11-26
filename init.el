@@ -3,7 +3,7 @@
 ;; ~~ add elpa and melpa package archives ~~
 (require 'package)
 (add-to-list 'package-archives
-	     '("gnu" . "http://elpa.gnu.org/packages/"))
+	     '("gnu" . "https://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives
              '("melpa-stable" . "https://stable.melpa.org/packages/") t)
 ;; add package list: markdown-mode, helm
