@@ -36,5 +36,6 @@
              '("melpa-stable" . "https://stable.melpa.org/packages/"))
 (package-initialize)
 
-;; ~~ pdb command ~~
+;; ~~ python ~~
 (setq gud-pdb-command-name "python -m pdb")
+(setq python-shell-completion-native-enable nil)
