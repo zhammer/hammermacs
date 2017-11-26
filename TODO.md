@@ -5,3 +5,5 @@
       * an internal emacs [regex101](https://regex101.com/) would be awesome
   * reverse markdown sublist indentation commands
       * right now C-u C-j decreases indentation by one level, C-u C-u C-j increases
+  * correct diff coloring in eshell (for git diff)
+      * or maybe use shell/term?
