@@ -34,7 +34,10 @@
 (show-paren-mode 1)
 (electric-pair-mode 1)
 (global-set-key (kbd "C-z") 'undo)
-
+(defun camel-to-snake () ;; improve this to ignore PythonClassDefinitions!!!
+  (interactive)
+  (progn (replace-regexp "\\(\\w\\)\\([A-Z]\\)" "\\1_\\2" nil (region-beginning) (region-end))
+	 (downcase-region (region-beginning) (region-end))))
 ;; ~~ ido mode ~~
 (ido-mode 1)
 (setq ido-everywhere t)
