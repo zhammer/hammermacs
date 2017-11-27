@@ -43,3 +43,4 @@ flycheck_*.el
 
 # directory configuration
 .dir-locals.el
+/ido.last
