@@ -34,8 +34,6 @@
 (show-paren-mode 1)
 (electric-pair-mode 1)
 (global-set-key (kbd "C-z") 'undo)
-;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
-;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
 (defun camel-to-snake ()
   ;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
   ;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
