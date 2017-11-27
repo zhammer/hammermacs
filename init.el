@@ -7,9 +7,9 @@
 ; set package archives
 ;; Question: how do i combine these into one line?
 (add-to-list 'package-archives
-	     '("gnu" . "https://elpa.gnu.org/packages/"))
+	     '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+             '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 (package-initialize)
 ; fetch the list of packages available 
 (unless package-archive-contents
