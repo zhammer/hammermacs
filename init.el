@@ -26,6 +26,7 @@
 (scroll-bar-mode -1)
 (setq inhibit-startup-screen t)
 (global-linum-mode t)
+(column-number-mode 1)
 (setq initial-scratch-message ";; it's hammertime")
 
 ;; ~~ edit preferences ~~
@@ -65,7 +66,7 @@
 
 ;; ~~ python ~~
 (setq gud-pdb-command-name "python -m pdb")
-(setq python-shell-completion-native-enable nil)
+(setq python-shell-completion-native-neable nil)
 (defun my-python-mode-config ()
   "For use in `python-mode-hook'."
   (local-set-key (kbd "C-c C-d") 'pdb)
