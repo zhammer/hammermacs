@@ -17,6 +17,7 @@
   * Magit
       * Special command to automatically stage, commit & push all root level markdown files.
   * Helm global prefix not enabled. if i like helm enable
+  * Convert all snake case to camel or visa versa. Perhaps a gui that displays all names, can select which to apply to.
   * Python
       * Autofill (autowrap) when inside docstrings
       * Python docstring wizard
