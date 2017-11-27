@@ -18,7 +18,7 @@
   * Convert all snake case to camel or visa versa. Perhaps a gui that displays all names, can select which to apply to.
   * Python
       * TODO comment coloring.
-      * Autofill (autowrap) when inside docstrings
+      * Autofill (autowrap) when inside docstrings (see [python-docstring-mode](https://github.com/glyph/python-docstring-mode))
       * Python docstring wizard
           * For all undocumented modules, add documentation
           * For function: Args: Returns:
