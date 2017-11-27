@@ -5,11 +5,12 @@
 ; list of packages to install
 (setq package-list '(magit wrap-region helm-ebdb helm markdown-mode))
 ; set package archives
-;; Question: how do i combine these into one line?
+; TODO: combine into one list line. confused about the 't' symbol.
 (add-to-list 'package-archives
 	     '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+; not https due to bloomberg security certificate issues. try to automate this.
 (package-initialize)
 ; fetch the list of packages available 
 (unless package-archive-contents
@@ -19,7 +20,7 @@
   (unless (package-installed-p package)
     (package-install package)))
 
-;; ~~ no menu, tool buttons, scroll, custom splash ~~
+;; ~~ gui display ~~
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
