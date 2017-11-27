@@ -16,3 +16,10 @@
       * Include simple instructions for me and others on how to actually get started with some of these packages, such as magit, helm, etc.
   * Magit
       * Special command to automatically stage, commit & push all root level markdown files.
+  * Python
+      * Autofill (autowrap) when inside docstrings
+      * Python docstring wizard
+          * For all undocumented modules, add documentation
+          * For function: Args: Returns:
+          * For classes/modules: Available features.
+          * Interactive minibuffer
