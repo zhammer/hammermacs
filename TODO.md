@@ -11,3 +11,5 @@
   * Try out [Magit](https://github.com/magit/magit)
   * Delay to turn on ido? I like the cleaner display at first
   * Check if it's possible to turn on autofill mode specifically w/in python docstrings.
+  * Update github documentation in README
+      * Include simple instructions for me and others on how to actually get started with some of these packages, such as magit, helm, etc.
