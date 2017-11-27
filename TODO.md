@@ -16,6 +16,7 @@
       * Include simple instructions for me and others on how to actually get started with some of these packages, such as magit, helm, etc.
   * Magit
       * Special command to automatically stage, commit & push all root level markdown files.
+  * Helm global prefix not enabled. if i like helm enable
   * Python
       * Autofill (autowrap) when inside docstrings
       * Python docstring wizard
