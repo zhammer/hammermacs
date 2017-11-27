@@ -12,7 +12,7 @@
              '("melpa-stable" . "http://stable.melpa.org/packages/") t)
 ; not https due to bloomberg security certificate issues. try to automate this.
 (package-initialize)
-; fetch the list of packages available 
+; fetch the list of packages available
 (unless package-archive-contents
   (package-refresh-contents))
 ; install the missing packages
@@ -34,6 +34,7 @@
 (show-paren-mode 1)
 (electric-pair-mode 1)
 (global-set-key (kbd "C-z") 'undo)
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 (defun camel-to-snake ()
   ;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
   ;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
