@@ -37,6 +37,8 @@
 ;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
 ;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
 (defun camel-to-snake ()
+  ;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
+  ;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
   (interactive)
   (progn (replace-regexp "\\(\\w\\)\\([A-Z]\\)" "\\1_\\2" nil (region-beginning) (region-end))
 	 (downcase-region (region-beginning) (region-end))))
