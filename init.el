@@ -33,6 +33,7 @@
 (setq show-paren-delay 0) ; must come before show-paren-mode enable
 (show-paren-mode 1)
 (electric-pair-mode 1)
+(global-set-key (kbd "C-z") 'undo)
 
 ;; ~~ ido mode ~~
 (ido-mode 1)
