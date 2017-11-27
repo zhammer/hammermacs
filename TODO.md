@@ -17,6 +17,7 @@
   * Helm global prefix not enabled. if i like helm enable
   * Convert all snake case to camel or visa versa. Perhaps a gui that displays all names, can select which to apply to.
   * Python
+      * parse_args wizard builder
       * TODO comment coloring.
       * Autofill (autowrap) when inside docstrings (see [python-docstring-mode](https://github.com/glyph/python-docstring-mode))
       * Python docstring wizard
