@@ -40,6 +40,13 @@
   (interactive)
   (progn (replace-regexp "\\(\\w\\)\\([A-Z]\\)" "\\1_\\2" nil (region-beginning) (region-end))
 	 (downcase-region (region-beginning) (region-end))))
+
+;; ~~ shortcuts ~~
+(defun init-edit ()
+  "Edit the 'user-init-file'"
+  (interactive)
+  (find-file user-init-file))
+
 ;; ~~ ido mode ~~
 (ido-mode 1)
 (setq ido-everywhere t)
