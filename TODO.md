@@ -5,7 +5,7 @@
   * Helm global prefix not enabled. if i like helm enable
   * Improve camel to snake command
   * Python
-	  * TODO comment coloring.
+	  * "TODO" comment coloring.
 	  * Autofill (autowrap) when inside docstrings (exordium does this -- ask philippe?)
 
 # BUGS
