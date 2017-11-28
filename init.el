@@ -36,6 +36,15 @@
 (electric-pair-mode 1)
 (global-set-key (kbd "C-z") 'undo)
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
+(define-key prog-mode-map (kbd "<return>") (function newline-and-indent))
+(define-key prog-mode-map (kbd "<S-return>") (function newline))
+(defun highlight-todos ()
+  (font-lock-add-keywords
+   nil
+   '(("\\<\\(FIXME\\):" 1 font-lock-warning-face prepend)
+     ("\\<\\(TBD\\):" 1 font-lock-warning-face prepend)
+     ("\\<\\(TODO\\):" 1 font-lock-warning-face prepend))))
+(add-hook 'prog-mode-hook 'highlight-todos)
 (defun camel-to-snake ()
   ;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
   ;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
