@@ -1,4 +1,4 @@
-DO
+
 # TODO
 
   * [Dired Omit Mode](https://www.emacswiki.org/emacs/DiredOmitMode) (with sqk file?)
