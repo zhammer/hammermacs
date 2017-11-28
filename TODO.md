@@ -1,4 +1,4 @@
-
+DO
 # TODO
 
   * [Dired Omit Mode](https://www.emacswiki.org/emacs/DiredOmitMode) (with sqk file?)
@@ -6,11 +6,9 @@
   * Improve camel to snake command
   * Setup include dir for non melpa/elpa packges
   * Python
-      * [doctest mode](http://ed.loper.org/projects/doctestmode/)
       * Prefix a symbol with _ w/in a file,
           * query-replace-regexp of following major word (including underscores) of word -> _\&
       * default C-c C-v linter is pylint, not epylint (unless i can configure epylint nicely)
-	  * "TODO" comment coloring.
 	  * Autofill (autowrap) when inside docstrings (exordium does this -- ask philippe?)
 
 # BUGS
