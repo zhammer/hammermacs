@@ -6,7 +6,7 @@
   * Improve camel to snake command
   * Python
 	  * TODO comment coloring.
-	  * Autofill (autowrap) when inside docstrings (see [python-docstring-mode](https://github.com/glyph/python-docstring-mode))
+	  * Autofill (autowrap) when inside docstrings (exordium does this -- ask philippe?)
 
 # BUGS
   * Markdown live preview doesn't support lists. Fix?
