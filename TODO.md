@@ -36,5 +36,3 @@
 		  * For function: Args: Returns:
 		  * For classes/modules: Available features.
 		  * Interactive minibuffer
-
-# Faroff
