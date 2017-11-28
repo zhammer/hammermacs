@@ -5,6 +5,9 @@
   * Helm global prefix not enabled. if i like helm enable
   * Improve camel to snake command
   * Python
+      * Prefix a symbol with _ w/in a file,
+          * query-replace-regexp of following major word (including underscores) of word -> _\&
+      * default C-c C-v linter is pylint, not epylint (unless i can configure epylint nicely)
 	  * "TODO" comment coloring.
 	  * Autofill (autowrap) when inside docstrings (exordium does this -- ask philippe?)
 
