@@ -86,7 +86,9 @@
 (require 'dired-x)
 ;; TODO: remove '..' from dired omit. can be useful if you don't know the C-^ command for parentdir
 (setq-default dired-omit-files-p t)
-(setq dired-omit-files (concat dired-omit-files "\\|^.*\\.pyc$"))
+(setq dired-omit-files (concat dired-omit-files
+			       "\\|^.*\\.pyc$"
+			       "\\|^.*\\.o$"))
 
 ;; ~~ theme ~~
 (custom-set-variables
