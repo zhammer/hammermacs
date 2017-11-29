@@ -82,6 +82,11 @@
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
+;; ~~ dired ~~
+(require 'dired-x)
+(setq-default dired-omit-files-p t) ; Buffer-local variable
+(setq dired-omit-files (concat dired-omit-files "\\|^.*\\.pyc$"))
+
 ;; ~~ theme ~~
 (custom-set-variables
  ;; custom-set-variables was added by Custom.

@@ -1,7 +1,7 @@
 
 # TODO
 
-  * [Dired Omit Mode](https://www.emacswiki.org/emacs/DiredOmitMode) (with sqk file?)
+  * Add to dired omit mode
   * Helm global prefix not enabled. if i like helm enable
   * Improve camel to snake command
   * Setup include dir for non melpa/elpa packges
