@@ -79,7 +79,6 @@
 	(let ((camel-words (hammermacs-get-uniq-regex-matches hammermacs-camel-search-regex))
 	      (snake-case "")
 	      (word ""))
-	  ;; for word in camel-words: goto point-min, highlight word, y-n prompt to change; search through and replace
 	  (while camel-words
 	    (setq word (car camel-words))
 	    (setq camel-words (cdr camel-words))
