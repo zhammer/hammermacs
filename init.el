@@ -66,7 +66,7 @@
 	  ))))
   )
 
-(defun hmacs-c-t-s (word)
+(defun hmacs-c-to-s (word)
   (let ((case-fold-search nil))
     (downcase (replace-regexp-in-string "[A-Z]" "_\\&" word t)))
   )
@@ -85,7 +85,7 @@
 	    (setq word (car camel-words))
 	    (setq camel-words (cdr camel-words))
 	    (goto-char (point-min))
-	    (query-replace-regexp word (hmacs-c-t-s word))
+	    (query-replace-regexp word (hmacs-c-to-s word))
 	    )
 	  ))))
   )
