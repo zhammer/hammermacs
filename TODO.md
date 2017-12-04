@@ -6,10 +6,7 @@
   * Improve camel to snake command
   * Setup include dir for non melpa/elpa packges
   * Python
-      * Prefix a symbol with _ w/in a file,
-          * query-replace-regexp of following major word (including underscores) of word -> _\&
-      * default C-c C-v linter is pylint, not epylint (unless i can configure epylint nicely)
-	  * Autofill (autowrap) when inside docstrings (exordium does this -- ask philippe?)
+	  * Autofill (autowrap) when inside docstrings
 
 # BUGS
   * Markdown live preview doesn't support lists. Fix?
