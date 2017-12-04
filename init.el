@@ -105,6 +105,7 @@
   (save-excursion
     (save-restriction
       (save-match-data
+	(let ((current-superword-mode superword-mode)))
 	(unwind-protect
 	    (progn
 	      (superword-mode 1)
@@ -116,8 +117,7 @@
 		      (print "No word selected.")
 		    (print (format "Word is already private: '%s'." my-word))))
 		))
-	  (superword-mode -1))
-	)))
+	  (superword-mode current-superword-mode)))))
   )
 
 ;; ~~ shortcuts ~~
@@ -171,7 +171,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (misterioso)))
- '(package-selected-packages (quote (magit wrap-region helm-ebdb helm markdown-mode)))
+ '(package-selected-packages
+   (quote
+    (groovy-mode magit wrap-region helm-ebdb helm markdown-mode)))
  '(x-focus-frame nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
