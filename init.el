@@ -30,6 +30,8 @@
 (setq initial-scratch-message ";; it's hammertime")
 
 ;; ~~ edit preferences ~~
+;; TODO: modelineposn mode
+(defalias 'yes-or-no-p 'y-or-n-p)
 (delete-selection-mode 1)
 (setq show-paren-delay 0) ; must come before show-paren-mode enable
 (show-paren-mode 1)
