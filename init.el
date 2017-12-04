@@ -92,7 +92,7 @@
 
 (defun hmacs-already-private (word)
   "Regex to check if a superword in python is already private."
-  (string-match "^_+\\w+" word))
+  (string-match "^_\\{1,2\\}\\w+" word))
 
 (defun hammermacs-py-privatize ()
   ;; TODO: can do different levels, _ to none, none to __, all combinations
@@ -100,15 +100,18 @@
   (save-excursion
     (save-restriction
       (save-match-data
-	(let ((superword-mode 1)
-	      (my-word (thing-at-point 'word t)))
-	  (if (not (or (null my-word) (hmacs-already-private my-word)))
-	      (progn (goto-char (point-min))
-		     (query-replace-regexp my-word "_\\&"))
-	    (if (null my-word)
-		(print "No word selected.")
-	      (print (format "Word is already private: '%s'." my-word))))
-			 )
+	(unwind-protect
+	    (progn
+	      (superword-mode 1)
+	      (let ((my-word (thing-at-point 'word t)))
+		(if (not (or (null my-word) (hmacs-already-private my-word)))
+		    (progn (goto-char (point-min))
+			   (query-replace-regexp my-word "_\\&"))
+		  (if (null my-word)
+		      (print "No word selected.")
+		    (print (format "Word is already private: '%s'." my-word))))
+		))
+	  (superword-mode -1))
 	)))
   )
 
