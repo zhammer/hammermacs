@@ -90,12 +90,18 @@
 	  ))))
   )
 
+(defun hmacs-wrap-wordbreak (regex)
+  "Wrap a regex with word break chars"
+  (concat "\\<" regex "\\>"))
+
 (defun hmacs-already-private (word)
   "Regex to check if a superword in python is already private."
   (string-match "^_\\{1,2\\}\\w+" word))
 
 (defun hammermacs-py-privatize ()
   ;; TODO: can do different levels, _ to none, none to __, all combinations
+  ;; TODO: cant wrap my-word with word boundaries as _ counts as a word boundary?
+  ;; TODO: save original state of superword-mode
   (interactive)
   (save-excursion
     (save-restriction
@@ -138,10 +144,12 @@
 
 ;; ~~ python ~~
 (setq gud-pdb-command-name "python -m pdb")
-(setq python-shell-completion-native-neable nil)
+;;(setq python-shell-completion-native-enable nil)
+(setq python-check-command "pylint")
 (defun my-python-mode-config ()
   "For use in `python-mode-hook'."
   (local-set-key (kbd "C-c C-d") 'pdb)
+  (local-set-key (kbd "C-c C-i") 'hammermacs-py-privatize)
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
