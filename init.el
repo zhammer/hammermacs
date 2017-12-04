@@ -92,7 +92,7 @@
 
 (defun hmacs-wrap-wordbreak (regex)
   "Wrap a regex with word break chars"
-  (concat "\\<" regex "\\>"))
+  (concat "\\b" regex "\\b"))
 
 (defun hmacs-already-private (word)
   "Regex to check if a superword in python is already private."
@@ -100,7 +100,6 @@
 
 (defun hammermacs-py-privatize ()
   ;; TODO: can do different levels, _ to none, none to __, all combinations
-  ;; TODO: cant wrap my-word with word boundaries as _ counts as a word boundary?
   ;; TODO: save original state of superword-mode
   (interactive)
   (save-excursion
@@ -112,7 +111,7 @@
 	      (let ((my-word (thing-at-point 'word t)))
 		(if (not (or (null my-word) (hmacs-already-private my-word)))
 		    (progn (goto-char (point-min))
-			   (query-replace-regexp my-word "_\\&"))
+			   (query-replace-regexp (hmacs-wrap-wordbreak my-word) "_\\&"))
 		  (if (null my-word)
 		      (print "No word selected.")
 		    (print (format "Word is already private: '%s'." my-word))))
@@ -150,6 +149,7 @@
   "For use in `python-mode-hook'."
   (local-set-key (kbd "C-c C-d") 'pdb)
   (local-set-key (kbd "C-c C-i") 'hammermacs-py-privatize)
+  (modify-syntax-entry ?_ "w")
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
