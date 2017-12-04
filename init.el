@@ -48,10 +48,10 @@
      ("\\<\\(TODO\\):" 1 font-lock-warning-face prepend))))
 (add-hook 'prog-mode-hook 'highlight-todos)
 
-(defvar hammermacs-camel-search-regex "\\b[a-z]+\\([A-Z][a-z]+\\)+\\b"
+(defvar hmacs-camel-search-regex "\\b[a-z]+\\([A-Z][a-z]+\\)+\\b"
   "Camelcase search regex. Should be used with a case-sensitive search.")
 
-(defun hammermacs-get-uniq-regex-matches (regexp)
+(defun hmacs-get-uniq-regex-matches (regexp)
   (save-excursion
     (save-restriction
       (save-match-data
@@ -71,14 +71,14 @@
     (downcase (replace-regexp-in-string "[A-Z]" "_\\&" word t)))
   )
 
-(defun hammermacs-camel-to-snake ()
+(defun hmacs-camel-to-snake ()
   (interactive)
   (save-excursion
     (save-restriction
       (save-match-data
 	(widen)
 	(goto-char (point-min))
-	(let ((camel-words (hammermacs-get-uniq-regex-matches hammermacs-camel-search-regex))
+	(let ((camel-words (hmacs-get-uniq-regex-matches hmacs-camel-search-regex))
 	      (snake-case "")
 	      (word ""))
 	  (while camel-words
@@ -98,7 +98,7 @@
   "Regex to check if a superword in python is already private."
   (string-match "^_\\{1,2\\}\\w+" word))
 
-(defun hammermacs-py-privatize ()
+(defun hmacs-py-privatize ()
   ;; TODO: can do different levels, _ to none, none to __, all combinations
   ;; TODO: save original state of superword-mode
   (interactive)
@@ -148,7 +148,7 @@
 (defun my-python-mode-config ()
   "For use in `python-mode-hook'."
   (local-set-key (kbd "C-c C-d") 'pdb)
-  (local-set-key (kbd "C-c C-i") 'hammermacs-py-privatize)
+  (local-set-key (kbd "C-c C-i") 'hmacs-py-privatize)
   (modify-syntax-entry ?_ "w")
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
