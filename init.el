@@ -47,12 +47,70 @@
      ("\\<\\(TBD\\):" 1 font-lock-warning-face prepend)
      ("\\<\\(TODO\\):" 1 font-lock-warning-face prepend))))
 (add-hook 'prog-mode-hook 'highlight-todos)
-(defun camel-to-snake ()
-  ;; TODO: camel-to-snake should first find all words that match the \\W[a-z]+\\([A-Z][a-z]+\\) regex.
-  ;; Then perform this replace-regexp in those words. Matches to first regex should be counted as 'x performed.'
+
+(defvar hammermacs-camel-search-regex "\\b[a-z]+\\([A-Z][a-z]+\\)+\\b"
+  "Camelcase search regex. Should be used with a case-sensitive search.")
+
+(defun hammermacs-get-uniq-regex-matches (regexp)
+  (save-excursion
+    (save-restriction
+      (save-match-data
+	(widen)
+	(goto-char (point-min))
+	(let ((matches)
+	      (case-fold-search nil))
+	  (while (re-search-forward regexp nil t)
+	    (push (match-string-no-properties 0) matches))
+	  (setq matches (seq-uniq matches))
+	  matches
+	  ))))
+  )
+
+(defun c-to-s (word)
+  (let ((case-fold-search nil))
+    (downcase (replace-regexp-in-string "[A-Z]" "_\\&" word t)))
+  )
+
+(defun hammermacs-camel-to-snake ()
   (interactive)
-  (progn (replace-regexp "\\(\\w\\)\\([A-Z]\\)" "\\1_\\2" nil (region-beginning) (region-end))
-	 (downcase-region (region-beginning) (region-end))))
+  (save-excursion
+    (save-restriction
+      (save-match-data
+	(widen)
+	(goto-char (point-min))
+	(let ((camel-words (hammermacs-get-uniq-regex-matches hammermacs-camel-search-regex))
+	      (snake-case "")
+	      (word ""))
+	  (while camel-words
+	    (setq word (car camel-words))
+	    (setq camel-words (cdr camel-words))
+	    (goto-char (point-min))
+	    (query-replace-regexp word (c-to-s word))
+	    )
+	  ))))
+  )
+
+(defun hmacs-already-private (word)
+  "Regex to check if a superword in python is already private."
+  (string-match "^_+\\w+" word))
+
+(defun hammermacs-py-privatize ()
+  ;; TODO: can do different levels, _ to none, none to __, all combinations
+  (interactive)
+  (save-excursion
+    (save-restriction
+      (save-match-data
+	(let ((superword-mode 1)
+	      (my-word (thing-at-point 'word t)))
+	  (if (not (or (null my-word) (hmacs-already-private my-word)))
+	      (progn (goto-char (point-min))
+		     (query-replace-regexp my-word "_\\&"))
+	    (if (null my-word)
+		(print "No word selected.")
+	      (print (format "Word is already private: '%s'." my-word))))
+			 )
+	)))
+  )
 
 ;; ~~ shortcuts ~~
 (defun init-edit ()
@@ -84,6 +142,9 @@
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
+;; ~~ helm ~~
+(global-set-key (kbd "C-h a") 'helm-apropos)
+
 ;; ~~ dired ~~
 (require 'dired-x)
 ;; TODO: remove '..' from dired omit. can be useful if you don't know the C-^ command for parentdir
@@ -106,4 +167,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(font-lock-doc-face ((t (:foreground "gray49")))))
