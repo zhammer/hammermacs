@@ -64,9 +64,9 @@
 	  ))))
   )
 
-(defun c-to-s ()
-  ;; how the f*** can i use this as my query-replace-regexp replacement arg in non-interactive mode?
-  (downcase (replace-regexp-in-string "[A-Z]" "_\\&" (match-string 0) t))
+(defun c-to-s (word)
+  (let ((case-fold-search nil))
+    (downcase (replace-regexp-in-string "[A-Z]" "_\\&" word t)))
   )
 
 (defun hammermacs-camel-to-snake ()
@@ -83,7 +83,7 @@
 	    (setq word (car camel-words))
 	    (setq camel-words (cdr camel-words))
 	    (goto-char (point-min))
-	    (query-replace-regexp word "\\\\,(c-to-s)")
+	    (query-replace-regexp word (c-to-s word))
 	    )
 	  ))))
   )
