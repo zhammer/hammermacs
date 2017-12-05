@@ -5,6 +5,7 @@
   * Helm global prefix not enabled. if i like helm enable
   * Improve camel to snake command
   * Setup include dir for non melpa/elpa packges
+  * http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html
   * Python
 	  * Autofill (autowrap) when inside docstrings
 
