@@ -1,6 +1,6 @@
 
 # TODO
-
+  * Setup modules dir and init-*.el files
   * Add to dired omit mode
   * Helm global prefix not enabled. if i like helm enable
   * Improve camel to snake command

@@ -5,7 +5,6 @@
 ; list of packages to install
 (setq package-list '(magit wrap-region helm-ebdb helm markdown-mode))
 ; set package archives
-; TODO: combine into one list line. confused about the 't' symbol.
 (add-to-list 'package-archives
 	     '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives
@@ -161,6 +160,7 @@
 ;; TODO: remove '..' from dired omit. can be useful if you don't know the C-^ command for parentdir
 (setq-default dired-omit-files-p t)
 (setq dired-omit-files (concat dired-omit-files
+			       "\\|^.*~$"
 			       "\\|^.*\\.pyc$"
 			       "\\|^.*\\.o$"))
 
@@ -173,7 +173,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages
    (quote
-    (groovy-mode magit wrap-region helm-ebdb helm markdown-mode)))
+    (magit wrap-region helm-ebdb helm markdown-mode)))
  '(x-focus-frame nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
