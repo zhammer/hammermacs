@@ -1,6 +1,9 @@
 # -*- mode: snippet -*-
 # name: experimental
 # key: exp
+# //TODO: remove region highlighting on leading whitespace in nested mode
+# //TODO: restrict possible keys to TAB and C-d in nested mode
+# //TODO: nested mode prompt?
 # --
 my_object.do(a=$1,${2:
              b=${3:},}

@@ -173,9 +173,8 @@
   (setq yas-snippet-dirs (remq 'yas-installed-snippets-dir yas-snippet-dirs))
   (yas-reload-all t)
   )
-;; TODO: add after advice to yas-skip-and-clear-or-dete-char.
-;; if r"^/s+.*," in .yas-setup.el python-mode subdir, kill line
 ;; TODO: inline autocomplete for yas-choose
+;; TODO: after python function creation, add function hook to visit each arg and enter description
 
 ;; ~~ theme ~~
 (custom-set-variables
