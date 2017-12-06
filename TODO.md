@@ -1,5 +1,6 @@
 
 # TODO
+  * yas-good-grace doesn't seem to be working
   * key binding for init-edit and 4 prefix for edit in other window
   * adjustable privatization levels for python privatize function
   * python yasnippets

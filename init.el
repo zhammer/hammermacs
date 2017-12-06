@@ -164,6 +164,16 @@
 			       "\\|^.*\\.pyc$"
 			       "\\|^.*\\.o$"))
 
+;; ~~ yasnippet ~~
+(require 'yasnippet)
+(yas-global-mode 1)
+(setq yas-prompt-functions '(yas-ido-prompt
+                             yas-completing-prompt))
+(with-eval-after-load 'yasnippet
+  (setq yas-snippet-dirs (remq 'yas-installed-snippets-dir yas-snippet-dirs))
+  (yas-reload-all t)
+  )
+
 ;; ~~ theme ~~
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -173,7 +183,7 @@
  '(custom-enabled-themes (quote (misterioso)))
  '(package-selected-packages
    (quote
-    (magit wrap-region helm-ebdb helm markdown-mode)))
+    (yasnippet magit wrap-region helm-ebdb helm markdown-mode)))
  '(x-focus-frame nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

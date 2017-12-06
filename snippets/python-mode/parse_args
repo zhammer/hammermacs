@@ -1,0 +1,19 @@
+# -*- mode: snippet -*-
+# name: parse_args
+# key: parse_args
+# //TODO: fill-region of docstring on exiting. region: line after yas-snippet-begin to that line + 3
+# --
+def _parse_args():
+    """Helper function to create the command-line argument parser for ${1:`(file-name-base (or buffer-file-name "my_script"))`}.
+    Return the parsed arguments as a Namespace object if
+    successful. Exits the program if unsuccessful or if the help
+    message is printed.
+    """
+    description = ('$2')
+    epilog = ('$3')
+    parser = argparse.ArgumentParser(description=description,
+                                     epilog=epilog)
+
+    $0
+
+    return parser.parse_args()

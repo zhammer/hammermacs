@@ -1,0 +1,15 @@
+# -*- mode: snippet -*-
+# name: parser_option
+# key: option
+# //TODO: fix yas-grace-mode to not throw exceptions on empty option-name substring
+# //TODO: can i combine yas-choose-value and yas-verify? or just auto-tab after choose.
+# //TODO: defaults?
+# //TODO: actually some local let variables would be awesome. like a local 'default' var for help
+# //TODO: also: on any optional fields, when moving away can delete the line if not used (def: WILL_BE_DELETED)
+# --
+
+parser.add_argument('-${1:$(substring yas-text 0 1)}', '--${1:option-name}',
+                    help='$2',
+                    required=${3:$$(yas-choose-value '("True" "False"))})
+
+$0
