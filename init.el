@@ -175,6 +175,7 @@
   )
 ;; TODO: add after advice to yas-skip-and-clear-or-dete-char.
 ;; if r"^/s+.*," in .yas-setup.el python-mode subdir, kill line
+;; TODO: inline autocomplete for yas-choose
 
 ;; ~~ theme ~~
 (custom-set-variables
