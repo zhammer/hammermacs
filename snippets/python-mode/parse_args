@@ -1,6 +1,7 @@
 # -*- mode: snippet -*-
 # name: parse_args
 # key: parse_args
+# expand-env: ((yas-after-exit-snippet-hook 'hmacs-parse-args-exit-hook))
 # //TODO: fill-region of docstring on exiting. region: line after yas-snippet-begin to that line + 3
 # --
 def _parse_args():

@@ -3,7 +3,7 @@
 ;; ~~ setup packages ~~
 (require 'package)
 ; list of packages to install
-(setq package-list '(magit wrap-region helm-ebdb helm markdown-mode))
+(setq package-list '(yasnippet magit wrap-region helm-ebdb helm markdown-mode))
 ; set package archives
 (add-to-list 'package-archives
 	     '("gnu" . "http://elpa.gnu.org/packages/"))
