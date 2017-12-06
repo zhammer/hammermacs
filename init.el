@@ -174,7 +174,7 @@
   (yas-reload-all t)
   )
 ;; TODO: add after advice to yas-skip-and-clear-or-dete-char.
-;; if python-mode and regex match r"^/s+.*,", kill line
+;; if r"^/s+.*," in .yas-setup.el python-mode subdir, kill line
 
 ;; ~~ theme ~~
 (custom-set-variables
