@@ -1,5 +1,12 @@
 
 # TODO
+  * key binding for init-edit and 4 prefix for edit in other window
+  * adjustable privatization levels for python privatize function
+  * python yasnippets
+      * def function w/ args
+          * optional 'raises' field
+      * _parse_args function template
+          * optional and positional args as well
   * Setup modules dir and init-*.el files
   * Add to dired omit mode
   * Helm global prefix not enabled. if i like helm enable
