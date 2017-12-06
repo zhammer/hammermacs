@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: experimental
+# key: exp
+# --
+my_object.do(a=$1,${2:
+             b=${3:},}
+             c=$4,
+             d=$5)
+
+$0

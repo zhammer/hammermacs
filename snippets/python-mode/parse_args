@@ -2,7 +2,6 @@
 # name: parse_args
 # key: parse_args
 # expand-env: ((yas-after-exit-snippet-hook 'hmacs-parse-args-exit-hook))
-# //TODO: fill-region of docstring on exiting. region: line after yas-snippet-begin to that line + 3
 # --
 def _parse_args():
     """Helper function to create the command-line argument parser for ${1:`(file-name-base (or buffer-file-name "my_script"))`}.
@@ -11,7 +10,7 @@ def _parse_args():
     message is printed.
     """
     description = ('$2')
-    epilog = ('$3')
+    epilog = ('${3:TODO}')
     parser = argparse.ArgumentParser(description=description,
                                      epilog=epilog)
 
