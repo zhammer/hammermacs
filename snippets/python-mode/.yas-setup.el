@@ -18,4 +18,8 @@
 
 (defun hmacs-parse-args-exit-hook ()
   "Hook for parse_args yas-after-exit"
-  (fill-region (hmacs-yas-line-beg 1) (hmacs-yas-line-end 4)))
+  (let ((doc-start (hmacs-yas-line-beg 1))
+	(doc-end (hmacs-yas-line-beg 4)))
+    ;;(message (concat "Docstring start: " (number-to-string doc-start)))
+    ;;(message (concat "Docstring end: " (number-to-string doc-end)))
+    (fill-region doc-start doc-end t t nil)))
