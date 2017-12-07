@@ -152,6 +152,16 @@
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
+;; ~~ c++ ~~
+;; TODO: add cpp-switch-h-cpp functionality from exordium
+(defun hmacs-cc-mode-config()
+  "For use in `cc-mode-hook'."
+  (define-key c-mode-base-map [(control tab)] 'cpp-switch-h-cpp) ;; TODO: this should maybe be moved to initialization hook.. also weird C-TAB syntax
+  (c-set-style "stroustrup")
+  (c-set-offset 'innamespace 0)
+  (c-set-offset 'inextern-lang 0))
+(add-hook 'c-mode-common-hook 'hmacs-cc-mode-config)
+
 ;; ~~ helm ~~
 (global-set-key (kbd "C-h a") 'helm-apropos)
 
