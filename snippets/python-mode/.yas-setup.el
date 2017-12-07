@@ -23,3 +23,16 @@
     ;;(message (concat "Docstring start: " (number-to-string doc-start)))
     ;;(message (concat "Docstring end: " (number-to-string doc-end)))
     (fill-region doc-start doc-end t t nil)))
+
+;; (split-string STRING &optional SEPARATORS OMIT-NULLS TRIM)
+
+(defun hmacs-yas-pyargs-docstring ()
+  (when (yas-text)
+    (let ((output "Args:")
+	  (args (split-string yas-text ",")))
+      (concat output
+	      (mapconcat (lambda (arg)
+			   (format "\n        %s" arg))
+			 args
+			 ""))
+      )))
