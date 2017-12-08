@@ -9,10 +9,9 @@ def _parse_args():
     successful. Exits the program if unsuccessful or if the help
     message is printed.
     """
-    description = ('$2')
-    epilog = ('${3:TODO}')
-    parser = argparse.ArgumentParser(description=description,
-                                     epilog=epilog)
+    description = ('$2')${3:
+    epilog = ('${4:#TODO}')}
+    parser = argparse.ArgumentParser(description=description${4:$(when (yas-text) ",\nepilog=epilog")})
 
     $0
 

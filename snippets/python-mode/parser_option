@@ -8,8 +8,8 @@
 # //TODO: also: on any optional fields, when moving away can delete the line if not used (def: WILL_BE_DELETED)
 # --
 
-parser.add_argument('-${1:$(substring yas-text 0 1)}', '--${1:option-name}',
-                    help='$2',
-                    required=${3:$$(yas-choose-value '("True" "False"))})
+parser.add_argument('-${1:$(substring yas-text 0 1)}', '--${1:option-name}',${2:
+                    required=${3:$$(yas-choose-value '("True" "False"))},}
+		    help='$4')
 
 $0

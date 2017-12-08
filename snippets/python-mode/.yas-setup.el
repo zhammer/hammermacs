@@ -92,6 +92,9 @@
   (when (hmacs-yas-next-field-nested)
     (yas-next-field)))
 
+;; TODO: allow Ctrl-d from yas-choose-values
+;; TODO: if inside string, allow ' or " chars without breaking interactivity
+
 (advice-add 'yas-skip-and-clear-or-delete-char :before #'hmacs-yas-skip-and-clear-or-delete-char-before-advice)
 (advice-add 'yas-skip-and-clear-or-delete-char :after #'hmacs-yas-skip-and-clear-or-delete-char-after-advice)
 (advice-add 'yas-next-field-or-maybe-expand :after #'hmacs-yas-next-field-after-advice)
