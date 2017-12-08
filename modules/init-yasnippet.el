@@ -11,6 +11,7 @@
   )
 ;; TODO: can check if field is nested with yas--field-parent-field
 ;; TODO: inline autocomplete for yas-choose
+;; TODO: after yas choose
 ;; TODO: after python function creation, add function hook to visit each arg and enter description
 
 (provide 'init-yasnippet)

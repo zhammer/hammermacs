@@ -1,3 +1,5 @@
+(require 'yasnippet)
+
 (defun hmacs-yas-line-beg (&optional offset)
   "Get the position at the beginning of line {offset} after yas-snippet-beg"
   (setq offset (1+ (or offset 0)))
@@ -53,3 +55,37 @@
 	;; TODO: this
 	(insert "#TODO")
 	(next-line))))))
+
+(setq yas-buffer-local-condition yas-not-string-or-comment-condition)
+
+(defun hmacs-yas-current-field-nested ()
+  "Return t if current field is nested. Otherwise return nil."
+  (let ((active-field (overlay-get yas--active-field-overlay 'yas--field)))
+    (yas--field-parent-field active-field))
+  )
+
+(defun hmacs-yas-next-field-nested (&optional arg)
+  "Return t if (arg) next field is nested. Otherwise return nil."
+  (when (yas-active-snippets)
+    (unless arg (setq arg 1))
+    (let* ((snippet (car (yas-active-snippets)))
+	   (active-field (overlay-get yas--active-field-overlay 'yas--field))
+	   (next-field (yas--find-next-field arg snippet active-field)))
+      (if next-field
+	  (yas--field-parent-field next-field)
+	nil))))
+
+(defun hmacs-yas-next-field-after-advice ()
+  "After 'next'ing to a field, if that field is a parent field, go to its nested (optional) field."
+  (when (hmacs-yas-next-field-nested)
+    (yas-next-field)
+    (message "Optional field."))
+  )
+
+(defun hmacs-yas-skip-and-clear-or-delete-char-before-advice ()
+  "If deleting a nested (optional) field, return to parent field and then delete."
+  (when (hmacs-yas-current-field-nested)
+    (yas-prev-field)))
+
+(advice-add 'yas-skip-and-clear-or-delete-char :before #'hmacs-yas-skip-and-clear-or-delete-char-before-advice)
+(advice-add 'yas-next-field-or-maybe-expand :after #'hmacs-yas-next-field-after-advice)
