@@ -56,6 +56,11 @@
 	(insert "#TODO")
 	(next-line))))))
 
+(defun hmacs-yas-first-letter (string)
+  (if (null string)
+      ""
+    (substring string 0 1)))
+
 (setq yas-buffer-local-condition yas-not-string-or-comment-condition)
 
 (defun hmacs-yas-current-field-nested ()
@@ -94,6 +99,7 @@
 
 ;; TODO: allow Ctrl-d from yas-choose-values
 ;; TODO: if inside string, allow ' or " chars without breaking interactivity
+;; TODO: tab after choose
 
 (advice-add 'yas-skip-and-clear-or-delete-char :before #'hmacs-yas-skip-and-clear-or-delete-char-before-advice)
 (advice-add 'yas-skip-and-clear-or-delete-char :after #'hmacs-yas-skip-and-clear-or-delete-char-after-advice)
