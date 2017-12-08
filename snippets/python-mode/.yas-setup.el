@@ -87,5 +87,14 @@
   (when (hmacs-yas-current-field-nested)
     (yas-prev-field)))
 
+(defun hmacs-yas-skip-and-clear-or-delete-char-after-advice ()
+  "Make sure to skip into an optional field even if coming from a skip and clear."
+  (when (hmacs-yas-next-field-nested)
+    (yas-next-field)))
+
+;; (advice-remove 'yas-next-field  #'hmacs-yas-next-field-around-advice)
+;; (advice-remove 'yas-next-field-or-maybe-expand  #'hmacs-yas-next-field-after-advice)
+
 (advice-add 'yas-skip-and-clear-or-delete-char :before #'hmacs-yas-skip-and-clear-or-delete-char-before-advice)
+(advice-add 'yas-skip-and-clear-or-delete-char :after #'hmacs-yas-skip-and-clear-or-delete-char-after-advice)
 (advice-add 'yas-next-field-or-maybe-expand :after #'hmacs-yas-next-field-after-advice)
