@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: de
+# key: de
+# --
+def $1($2):
+    """$3"""
+    pass$0

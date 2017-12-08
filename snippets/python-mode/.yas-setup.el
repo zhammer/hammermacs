@@ -49,12 +49,17 @@
     (save-match-data
       (goto-char yas-snippet-beg)
       (when (re-search-forward "Args:" nil t)
-      (next-line)
-      (while (string-match "\\s-+\\w+:$" (thing-at-point 'line t))
-	(end-of-line)
-	;; TODO: this
-	(insert "#TODO")
-	(next-line))))))
+	(next-line)
+	(let ((line-as-string (thing-at-point 'line t))
+	      (arg-name ""))
+	  (while (string-match "\\s-+\\(\\w+\\):$" line-as-string)
+	    (setq arg-name (match-string 0 line-as-string))
+	    (end-of-line)
+	    (insert " ")
+	    (insert (read-string arg-name))
+	    (next-line)
+	    (setq line-as-string (thing-at-point 'line t))))))))
+;; Note: If desired, I could align this text with C-u C-x align-regexp :\(\s*\)
 
 (defun hmacs-yas-first-letter (string)
   (if (null string)
