@@ -183,6 +183,7 @@
   (setq yas-snippet-dirs (remq 'yas-installed-snippets-dir yas-snippet-dirs))
   (yas-reload-all t)
   )
+;; TODO: can check if field is nested with yas--field-parent-field
 ;; TODO: inline autocomplete for yas-choose
 ;; TODO: after python function creation, add function hook to visit each arg and enter description
 
