@@ -26,13 +26,30 @@
 
 ;; (split-string STRING &optional SEPARATORS OMIT-NULLS TRIM)
 
+(defvar hmacs-yas-pyargs-trimregex "\\W+\\|=.*"
+  "Regex for trimming characters from start and end of python function arguments.")
+
 (defun hmacs-yas-pyargs-docstring ()
-  (when (yas-text)
-    (let ((output "Args:")
-	  (args (split-string yas-text ",")))
-      (concat output
-	      (mapconcat (lambda (arg)
-			   (format "\n        %s" arg))
-			 args
-			 ""))
-      )))
+  (save-match-data
+    (when (yas-text)
+      (let ((output "\n\nArgs:")
+	    (args (split-string yas-text "," t hmacs-yas-pyargs-trimregex)))
+	(concat output
+		(mapconcat (lambda (arg)
+			     (format "\n        %s:" arg))
+			   args
+			   ""))
+	))))
+
+(defun hmacs-yas-def-exit-hook ()
+  "After exiting from the 'def' yas snippet, tab through args to add descriptions"
+  (save-excursion
+    (save-match-data
+      (goto-char yas-snippet-beg)
+      (when (re-search-forward "Args:" nil t)
+      (next-line)
+      (while (string-match "\\s-+\\w+:$" (thing-at-point 'line t))
+	(end-of-line)
+	;; TODO: this
+	(insert "#TODO")
+	(next-line))))))
