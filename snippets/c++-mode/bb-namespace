@@ -1,0 +1,11 @@
+# -*- mode: snippet -*-
+# name: bb-namespace
+# key: namespace
+# --
+namespace BloombergLP {
+namespace ${1:`(hmacs-extract-package-name)`} {
+
+$0
+
+} // close package namespace
+} // close enterprise namespace
