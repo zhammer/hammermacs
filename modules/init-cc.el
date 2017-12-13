@@ -14,7 +14,6 @@
            " *; *$")
            (point-at-eol) t))
 
-;; TODO: add cpp-switch-h-cpp functionality from exordium
 (defun bde-comment-offset (element) ;; From Exordium
   "Custom line-up function for BDE comments.
 Return a symbol for the correct indentation level at the
@@ -76,8 +75,11 @@ current cursor position, if the cursor is within a class definition:
   (setq indent-tabs-mode nil))
 (add-hook 'c-mode-common-hook 'hmacs-cc-mode-config)
 
+;; TODO: add cpp-switch-h-cpp functionality from exordium
+
 ;; TODO: create cpp snippets. on opening header file, insert guards.
 ;; Then, move point to first line after guards.
 ;; TODO: y-or-n prompt to add namespace braces
+;; Include guards: if not modified-p, create name based on filename
 
 (provide 'init-cc)
