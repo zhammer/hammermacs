@@ -39,4 +39,9 @@
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
+;; set python to utf-8 for mac
+(setenv "LC_CTYPE" "UTF-8")
+(setenv "LC_ALL" "en_US.UTF-8")
+(setenv "LANG" "en_US.UTF-8")
+
 (provide 'init-python)
