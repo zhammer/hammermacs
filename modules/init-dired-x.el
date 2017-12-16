@@ -7,6 +7,9 @@
 (setq dired-omit-files (concat dired-omit-files
 			       "\\|^.*~$"
 			       "\\|^.*\\.pyc$"
-			       "\\|^.*\\.o$"))
+			       "\\|^.*\\.o$"
+			       "\\|^00.*$"
+			       "\\|^.*\\.tsk$"
+			       "\\|^ported\\.linux$"))
 
 (provide 'init-dired-x)

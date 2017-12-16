@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: header-guard
+# key: #ifndef
+# --
+#ifndef INCLUDED_${1:`(hmacs-gen-headerguard-name)`}
+#define INCLUDED_$1
+
+$0
+
+#endif
