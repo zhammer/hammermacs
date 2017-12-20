@@ -2,6 +2,7 @@
 
 (delete-selection-mode 1)
 (setq show-paren-delay 0)
+(superword-mode 1)
 (show-paren-mode 1)
 (electric-pair-mode 1)
 (global-set-key (kbd "C-z") 'undo)
