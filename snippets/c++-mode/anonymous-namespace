@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: anonymous-namespace
+# key: anon
+# --
+namespace {
+
+$0
+
+} // close anonymous namespace
