@@ -8,6 +8,7 @@
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 (define-key prog-mode-map (kbd "<return>") (function newline-and-indent))
 (define-key prog-mode-map (kbd "<S-return>") (function newline))
+(setq-default indent-tabs-mode nil)
 (defun highlight-todos ()
   (font-lock-add-keywords
    nil

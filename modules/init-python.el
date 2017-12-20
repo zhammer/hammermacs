@@ -36,6 +36,7 @@
   (local-set-key (kbd "C-c C-d") 'pdb)
   (local-set-key (kbd "C-c C-i") 'hmacs-py-privatize)
   (modify-syntax-entry ?_ "w")
+  (setq python-shell-interpreter "python3.6")
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 
