@@ -2,6 +2,7 @@
 # TODO
   * STORE BACKUP FILES IN ONE LOCATION!
   * C++
+      * Package name is everything before last underscore
       * Setup some compile commands for running makefiles, etc.
   * yas-good-grace doesn't seem to be working
   * key binding for init-edit and 4 prefix for edit in other window
