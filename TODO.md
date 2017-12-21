@@ -1,6 +1,5 @@
 
 # TODO
-  * STORE BACKUP FILES IN ONE LOCATION!
   * C++
       * Package name is everything before last underscore
       * Setup some compile commands for running makefiles, etc.
