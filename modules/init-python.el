@@ -39,6 +39,7 @@
   (setenv "LC_CTYPE" "UTF-8")
   (setenv "LC_ALL" "en_US.UTF-8")
   (setenv "LANG" "en_US.UTF-8")
+  (setq python-shell-interpreter "python3.6")
   )
 (add-hook 'python-mode-hook 'my-python-mode-config)
 

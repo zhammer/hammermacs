@@ -1,0 +1,8 @@
+# -*- mode: snippet -*-
+# name: bde-strong-comment
+# key: /=
+# --
+                            // ${1:$(make-string (string-width yas-text) ?\=)}
+                            // $1
+                            // ${1:$(make-string (string-width yas-text) ?\=)}
+$0

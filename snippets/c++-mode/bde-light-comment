@@ -1,0 +1,7 @@
+# key: /-
+# name: bde-light-comment
+# --
+                            // ${1:$(make-string (string-width yas-text) ?\-)}
+                            // $1
+                            // ${1:$(make-string (string-width yas-text) ?\-)}
+$0
