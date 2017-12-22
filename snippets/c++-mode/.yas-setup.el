@@ -26,9 +26,3 @@
   (let ((package-name (hmacs-extract-package-name))
 	(component-name (hmacs-extract-component-name)))
     (mapconcat 'upcase (remove-if #'null (list package-name component-name)) "_")))
-
-
-;; TODO: get package name
-;; TODO: get component name
-
-;; TODO: get ifndefguard name
