@@ -3,30 +3,16 @@
   * C++
       * Package name is everything before last underscore
       * Setup some compile commands for running makefiles, etc.
-  * yas-good-grace doesn't seem to be working
-  * key binding for init-edit and 4 prefix for edit in other window
+  * init-edit C-u prefix for open in other window
   * adjustable privatization levels for python privatize function
-  * python yasnippets
-      * def function w/ args
-          * optional 'raises' field
-      * _parse_args function template
-          * optional and positional args as well
   * Setup modules dir and init-*.el files
-  * Add to dired omit mode
-  * Helm global prefix not enabled. if i like helm enable
+  * Helm mode for most help options (command, function, variable) not just apropos
   * Improve camel to snake command
   * Setup include dir for non melpa/elpa packges
   * http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html
-  * Python
-	  * Autofill (autowrap) when inside docstrings
 
 # BUGS
   * Markdown live preview doesn't support lists. Fix?
-
-# CHECKOUT
-  * Checkout org mode
-  * Hippie expand
-  * YASnippet
 
 # REPO
   * would be cool to have a jenkins build on PR's to check that emacs init.el doesn't break.
@@ -42,9 +28,6 @@
   * Magit
 	  * Special command to automatically stage, commit & push all root level markdown files.
   * Python
-	  * parse_args wizard builder
-	  * Python docstring wizard
-		  * For all undocumented modules, add documentation
-		  * For function: Args: Returns:
-		  * For classes/modules: Available features.
-		  * Interactive minibuffer
+    * For all undocumented modules, add documentation
+    * For function: Args: Returns:
+    * For classes/modules: Available features.
