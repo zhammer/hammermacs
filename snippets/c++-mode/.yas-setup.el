@@ -1,12 +1,11 @@
 ;; hmacs c++-mode yas setup
 
 (require 'cl)
-
-(defvar hmacs-file-name-re "\\(?:\\(\\w+\\)_\\)?\\(\\w+\\)"
+(defvar hmacs-file-name-re "\\(?:\\([a-zA-Z_]+\\)_\\)?\\(\\w+\\)"
   "Regex for extracting package name of a file.
 	\\1: package
 	\\2: component
-	\\3: filetype")
+   Note: [\w_] syntax wouldn't work, so has to use a-zA-Z in package capture group.")
 
 (defun hmacs-extract-package-name ()
   "Get the package name of a cpp filename. If no package name, return empty string."

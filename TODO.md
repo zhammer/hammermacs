@@ -1,13 +1,10 @@
 
 # TODO
   * C++
-      * Package name is everything before last underscore
       * Setup some compile commands for running makefiles, etc.
   * init-edit C-u prefix for open in other window
   * adjustable privatization levels for python privatize function
-  * Setup modules dir and init-*.el files
   * Helm mode for most help options (command, function, variable) not just apropos
-  * Improve camel to snake command
   * Setup include dir for non melpa/elpa packges
   * http://cupfullofcode.com/blog/2013/02/26/snippet-expansion-with-yasnippet/index.html
 
@@ -25,8 +22,6 @@
 # PROJECTS
   * re-builder (or similar equivalent) with python style raw string regexes
 	  * an internal emacs [regex101](https://regex101.com/) would be awesome
-  * Magit
-	  * Special command to automatically stage, commit & push all root level markdown files.
   * Python
     * For all undocumented modules, add documentation
     * For function: Args: Returns:
