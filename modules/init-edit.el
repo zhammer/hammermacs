@@ -23,4 +23,11 @@
   (interactive)
   (find-file user-init-file))
 
+(defun hmacs-shell-command-on-region (command)
+  "Wrapper around shell-command-on-region to replace region with output by default."
+  (interactive "MShell command on region: ")
+  (shell-command-on-region (region-beginning) (region-end) command t t))
+
+(global-set-key (kbd "M-|") 'hmacs-shell-command-on-region)
+
 (provide 'init-edit)
