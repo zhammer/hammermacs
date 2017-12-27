@@ -3,6 +3,8 @@
   * C++
       * Setup some compile commands for running makefiles, etc.
   * init-edit C-u prefix for open in other window
+  * checkout helm w/ projectile
+  * C-x arrow keys to swithc windows directionally
   * adjustable privatization levels for python privatize function
   * Helm mode for most help options (command, function, variable) not just apropos
   * Setup include dir for non melpa/elpa packges
