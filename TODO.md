@@ -1,5 +1,6 @@
 # TODO
   * around advice for indent, if region active, indent-region
+  * https://github.com/magit/magit/issues/204 set this as default
   * C++
       * Setup some compile commands for running makefiles, etc.
   * init-edit C-u prefix for open in other window
