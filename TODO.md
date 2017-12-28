@@ -1,5 +1,7 @@
 
 # TODO
+  * Remap next buffer / previous buffer to something other than C-x <right> C-x <left>
+  * Remape wind-move-dir to C-x <dir>
   * C++
       * Setup some compile commands for running makefiles, etc.
   * init-edit C-u prefix for open in other window
