@@ -1,4 +1,5 @@
 # TODO
+  * around advice for indent, if region active, indent-region
   * C++
       * Setup some compile commands for running makefiles, etc.
   * init-edit C-u prefix for open in other window
