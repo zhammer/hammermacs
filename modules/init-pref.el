@@ -18,9 +18,11 @@ If the new path's directories does not exist, create them."
 ;; Backup files are consolidated into one tree structure in .emacs.d
 (setq make-backup-file-name-function 'my-backup-file-name)
 
-(global-set-key (kbd "C-c <left>")  'windmove-left)
-(global-set-key (kbd "C-c <right>") 'windmove-right)
-(global-set-key (kbd "C-c <up>")    'windmove-up)
-(global-set-key (kbd "C-c <down>")  'windmove-down)
+(global-set-key (kbd "C-x p") 'previous-buffer)
+(global-set-key (kbd "C-x n") 'next-buffer) ;; replaces C-x n prefix for narrowing
+(global-set-key (kbd "C-x <left>")  'windmove-left)
+(global-set-key (kbd "C-x <right>") 'windmove-right)
+(global-set-key (kbd "C-x <up>")    'windmove-up)
+(global-set-key (kbd "C-x <down>")  'windmove-down)
 
 (provide 'init-pref)
