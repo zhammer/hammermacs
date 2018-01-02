@@ -1,5 +1,12 @@
 # TODO
   * around advice for indent, if region active, indent-region
+      * The problem is w/ realigining regions with tab
+      * Oddly:
+      ```
+      If ‘transient-mark-mode’ is turned on and the region is active,
+this function instead calls ‘indent-region’.  In this case, any
+prefix argument is ignored.
+      ```
   * 'after-init.el' file for the custom added stuff
   * https://github.com/magit/magit/issues/204 set this as default
   * C++

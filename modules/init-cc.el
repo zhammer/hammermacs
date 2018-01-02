@@ -65,6 +65,28 @@ current cursor position, if the cursor is within a class definition:
 
 (add-to-list 'auto-mode-alist '("\\.h\\'" . c++-mode))
 
+(defun hmacs-get-complementary-cpp-extension (extension)
+  "Return 'h' for 'cpp' and vice versa."
+  (cond ((string= extension "h") "cpp")
+        ((string= extension "cpp") "h"))
+  )
+
+(defun hmacs-switch-h-cpp ()
+  "Switch between the .h and .cpp files of the file open in the active buffer."
+  (interactive)
+  (let* ((filename (buffer-file-name))
+         (extension (file-name-extension filename))
+         (basename (file-name-base))
+         (dirname (file-name-directory filename)))
+    (if (member extension '("h" "cpp"))
+        (let* ((target-extension (hmacs-get-complementary-cpp-extension extension))
+               (target-file (concat dirname basename "." target-extension)))
+          (if (get-file-buffer target-file)
+              (switch-to-buffer (get-file-buffer target-file))
+            (find-file target-file)))
+      (message "Current filename does not end in '.h' or '.cpp'"))
+    ))
+
 (defun hmacs-cc-mode-config()
   "For use in `cc-mode-hook'."
   (c-set-style "stroustrup")
@@ -72,14 +94,8 @@ current cursor position, if the cursor is within a class definition:
   (c-set-offset 'inextern-lang 0)
   (c-set-offset 'access-label -2)
   (c-set-offset 'comment-intro 'bde-comment-offset)
-  (setq indent-tabs-mode nil))
+  (setq indent-tabs-mode nil)
+  (local-set-key (kbd "<C-tab>") 'hmacs-switch-h-cpp))
 (add-hook 'c-mode-common-hook 'hmacs-cc-mode-config)
-
-;; TODO: add cpp-switch-h-cpp functionality from exordium
-
-;; TODO: create cpp snippets. on opening header file, insert guards.
-;; Then, move point to first line after guards.
-;; TODO: y-or-n prompt to add namespace braces
-;; Include guards: if not modified-p, create name based on filename
 
 (provide 'init-cc)
