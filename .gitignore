@@ -49,3 +49,4 @@ flycheck_*.el
 # other
 recentf
 *dat
+/after-init.el
