@@ -1,5 +1,6 @@
 # TODO
   * around advice for indent, if region active, indent-region
+  * 'after-init.el' file for the custom added stuff
   * https://github.com/magit/magit/issues/204 set this as default
   * C++
       * Setup some compile commands for running makefiles, etc.
