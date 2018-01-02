@@ -83,7 +83,9 @@ current cursor position, if the cursor is within a class definition:
                (target-file (concat dirname basename "." target-extension)))
           (if (get-file-buffer target-file)
               (switch-to-buffer (get-file-buffer target-file))
-            (find-file target-file)))
+            (if (file-exists-p target-file)
+                (find-file target-file)
+              (error "%s does not exist" target-file))))
       (message "Current filename does not end in '.h' or '.cpp'"))
     ))
 
