@@ -1,4 +1,7 @@
 # TODO
+  * C++:
+      * Non-body comments should be docstrings.
+          * This could be more specific: only comments following functions, classes, etc.
   * init-edit C-u prefix for open in other window
   * checkout helm w/ projectile
   * adjustable privatization levels for python privatize function
