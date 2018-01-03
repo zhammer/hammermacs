@@ -27,4 +27,5 @@
 
 ;; Save custom set variables to after-init-el rather than to init.el.
 (setq custom-file "~/.emacs.d/after-init.el")
-(load custom-file)
+(when (file-exists-p "~/.emacs.d/after-init.el")
+      (load custom-file))
