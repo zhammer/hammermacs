@@ -1,5 +1,6 @@
 # key: /-
 # name: bde-light-comment
+# expand-env: ((yas-indent-line 'fixed))
 # --
                             // ${1:$(make-string (string-width yas-text) ?\-)}
                             // $1
