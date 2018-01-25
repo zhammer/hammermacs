@@ -1,4 +1,5 @@
 # TODO
+  * xml tab autocomplete
   * C++:
       * Non-body comments should be docstrings.
           * This could be more specific: only comments following functions, classes, etc.
