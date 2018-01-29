@@ -29,5 +29,6 @@
   (shell-command-on-region (region-beginning) (region-end) command t t))
 
 (global-set-key (kbd "M-|") 'hmacs-shell-command-on-region)
+(global-set-key (kbd "M-]") 'yank)
 
 (provide 'init-edit)
