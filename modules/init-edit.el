@@ -30,5 +30,6 @@
 
 (global-set-key (kbd "M-|") 'hmacs-shell-command-on-region)
 (global-set-key (kbd "M-]") 'yank)
+(global-set-key (kbd "M-C-]") 'helm-show-kill-ring)
 
 (provide 'init-edit)
