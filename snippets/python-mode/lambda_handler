@@ -1,0 +1,16 @@
+# -*- mode: snippet -*-
+# name: lambda_handler
+# key: lambda
+# --
+"""AWS lambda function for $1"""
+
+import logging
+
+logger = logging.getLogger(__name__)
+
+def main(event, context):
+    """AWS lambda event handler"""
+    $0
+    logger.debug('Handling event "%s". Context: "%s"', event, context)
+
+    return None
