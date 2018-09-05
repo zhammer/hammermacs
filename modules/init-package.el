@@ -2,7 +2,7 @@
 
 (require 'package)
 
-(setq package-list '(yasnippet magit wrap-region helm-ebdb helm markdown-mode))
+(setq package-list '(yasnippet magit wrap-region helm-ebdb helm markdown-mode nyan-mode))
 
 (add-to-list 'package-archives
 	     '("gnu" . "http://elpa.gnu.org/packages/"))

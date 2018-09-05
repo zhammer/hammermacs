@@ -8,4 +8,9 @@
 (column-number-mode 1)
 (setq initial-scratch-message ";; it's hammertime")
 
+;; nyan mode
+(nyan-mode 1)
+(setq nyan-animate-nyancat t)
+(setq nyan-wavy-trail t)
+
 (provide 'init-gui)
